@@ -8,7 +8,7 @@ import { Input } from '@/components/ui/Input';
 import { Button } from '@/components/ui/Button';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/Card';
 import { loginAction } from '@/actions/auth.actions';
-import { Sparkles, Lock, Mail, ArrowRight, Info } from 'lucide-react';
+import { Lock, Mail, ArrowUpRight, Info } from 'lucide-react';
 
 function AdminLoginForm() {
   const router = useRouter();
@@ -40,7 +40,7 @@ function AdminLoginForm() {
       const res = await loginAction({ email, password });
 
       if (res.success) {
-        success('Access Granted', 'Welcome to LeadDesk Mini Admin Portal.');
+        success('Access Granted', 'Welcome to LeadDesk Mini Admin Control Center.');
         router.push('/admin');
         router.refresh();
       } else {
@@ -55,33 +55,31 @@ function AdminLoginForm() {
   };
 
   return (
-    <div className="min-h-screen bg-[#07090e] text-slate-100 flex items-center justify-center p-4 relative overflow-hidden">
-      {/* Background glow elements */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-indigo-600/10 rounded-full blur-[140px] pointer-events-none" />
-
+    <div className="min-h-screen bg-[#0a0b0d] text-[#f4f3ef] flex items-center justify-center p-4 relative overflow-hidden font-sans">
       <div className="w-full max-w-md relative z-10">
-        {/* Header Logo */}
+        
+        {/* Header Brand */}
         <div className="flex flex-col items-center text-center mb-8">
-          <Link href="/" className="flex items-center gap-3 mb-4 group">
-            <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-indigo-600 to-cyan-400 flex items-center justify-center shadow-lg shadow-indigo-500/30 group-hover:scale-105 transition-transform">
-              <Sparkles className="w-6 h-6 text-white" />
+          <Link href="/" className="flex items-center gap-2.5 mb-4 group">
+            <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-[#d97706] to-[#f59e0b] flex items-center justify-center shadow-lg shadow-amber-950/40 group-hover:scale-105 transition-transform">
+              <span className="font-mono font-black text-sm text-white">LD</span>
             </div>
           </Link>
-          <h1 className="text-2xl font-bold text-slate-100">Admin Control Center</h1>
-          <p className="text-sm text-slate-400 mt-1">Sign in to manage lead pipeline & status tracking</p>
+          <h1 className="text-2xl font-extrabold text-[#f4f3ef] font-display tracking-tight">Admin Control Center</h1>
+          <p className="text-xs text-slate-400 mt-1">Sign in to manage lead pipeline &amp; status triage</p>
         </div>
 
-        {/* Quick Demo Credentials Assistant Box */}
-        <div className="mb-6 p-4 rounded-xl bg-indigo-950/40 border border-indigo-500/30 flex flex-col gap-2.5 animate-fade-in">
+        {/* Demo Credentials Assistant Box */}
+        <div className="mb-6 p-4 rounded-xl bg-[#121418] border border-amber-500/30 flex flex-col gap-2.5 animate-fade-in-up">
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2 text-xs font-bold text-indigo-300">
-              <Info className="w-4 h-4 text-indigo-400" />
+            <div className="flex items-center gap-2 text-xs font-bold text-amber-400 font-mono">
+              <Info className="w-4 h-4 text-amber-400" />
               <span>Demo Admin Credentials</span>
             </div>
             <button
               type="button"
               onClick={fillDemoCredentials}
-              className="text-[11px] font-bold text-cyan-400 hover:text-cyan-300 bg-cyan-500/10 px-2.5 py-1 rounded-md border border-cyan-500/20 transition-colors"
+              className="text-[11px] font-mono font-bold text-amber-400 hover:text-amber-300 bg-amber-500/10 px-2.5 py-1 rounded-md border border-amber-500/20 transition-colors"
             >
               Auto-Fill Credentials
             </button>
@@ -92,27 +90,27 @@ function AdminLoginForm() {
           </div>
         </div>
 
-        <Card className="glass-panel border border-slate-800 shadow-2xl p-6 sm:p-8">
+        <Card className="tactile-card border border-white/10 shadow-2xl p-6 sm:p-8 bg-[#121418]">
           <CardHeader className="p-0 mb-6">
-            <CardTitle className="text-xl">Authentication</CardTitle>
-            <CardDescription className="text-xs">Protected session login</CardDescription>
+            <CardTitle className="text-lg">Session Authorization</CardTitle>
+            <CardDescription className="text-xs">Enter your credentials to access protected routes</CardDescription>
           </CardHeader>
 
           <CardContent className="p-0">
             {errorMsg && (
-              <div className="mb-4 p-3 rounded-lg bg-rose-500/10 border border-rose-500/30 text-rose-300 text-xs animate-fade-in">
+              <div className="mb-4 p-3 rounded-lg bg-rose-500/10 border border-rose-500/30 text-rose-300 text-xs animate-fade-in-up font-sans">
                 {errorMsg}
               </div>
             )}
 
             <form onSubmit={handleLogin} className="flex flex-col gap-4" noValidate>
               <Input
-                label="Admin Email"
+                label="Admin Work Email"
                 type="email"
                 placeholder="admin@leaddesk.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                leftIcon={<Mail className="w-4 h-4" />}
+                leftIcon={<Mail className="w-4 h-4 text-slate-400" />}
                 required
               />
 
@@ -122,7 +120,7 @@ function AdminLoginForm() {
                 placeholder="••••••••••••"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                leftIcon={<Lock className="w-4 h-4" />}
+                leftIcon={<Lock className="w-4 h-4 text-slate-400" />}
                 required
               />
 
@@ -132,8 +130,8 @@ function AdminLoginForm() {
                 size="lg"
                 isLoading={isLoading}
                 fullWidth
-                rightIcon={<ArrowRight className="w-4 h-4" />}
-                className="mt-2 font-semibold shadow-lg shadow-indigo-600/25"
+                rightIcon={<ArrowUpRight className="w-4 h-4" />}
+                className="mt-2 font-bold shadow-lg shadow-amber-950/40 rounded-lg"
               >
                 Sign In To Dashboard
               </Button>
@@ -142,10 +140,11 @@ function AdminLoginForm() {
         </Card>
 
         <div className="text-center mt-6">
-          <Link href="/" className="text-xs text-slate-400 hover:text-slate-200 transition-colors">
+          <Link href="/" className="text-xs font-mono text-slate-400 hover:text-slate-200 transition-colors">
             ← Return to Public Landing Page
           </Link>
         </div>
+
       </div>
     </div>
   );
