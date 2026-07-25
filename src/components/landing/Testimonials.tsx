@@ -28,43 +28,53 @@ export const Testimonials: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 relative border-t border-slate-800/80 bg-slate-950/60">
+    <section className="py-24 relative border-b border-white/10 bg-[#0a0b0d]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Section Title */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="flex items-center justify-center gap-1 text-amber-400 mb-3">
             {[...Array(5)].map((_, i) => (
-              <Star key={i} className="w-5 h-5 fill-amber-400 text-amber-400" />
+              <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
             ))}
           </div>
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-100 tracking-tight">
-            Loved By High-Performing Growth Leaders
+          <h2 className="text-3xl sm:text-5xl font-extrabold text-[#f4f3ef] tracking-tight font-display">
+            Validated By High-Growth{' '}
+            <span className="font-serif-italic font-normal text-amber-400 font-serif">
+              Sales Leaders
+            </span>
           </h2>
-          <p className="text-slate-400 text-base sm:text-lg mt-4">
-            See how modern B2B teams use LeadDesk Mini to eliminate pipeline drop-off.
+          <p className="text-slate-400 text-sm sm:text-base mt-3 font-sans">
+            See how modern SaaS and agency teams eliminate lead drop-off using LeadDesk Mini.
           </p>
         </div>
 
+        {/* Magazine Reviews Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {reviews.map((rev, index) => (
-            <Card key={index} className="glass-card p-6 flex flex-col justify-between border border-slate-800">
+            <Card key={index} className="tactile-card p-8 flex flex-col justify-between border border-white/10">
               <CardContent className="p-0">
-                <Quote className="w-8 h-8 text-indigo-500/40 mb-4" />
-                <p className="text-sm text-slate-300 leading-relaxed italic mb-6">&quot;{rev.text}&quot;</p>
+                <Quote className="w-8 h-8 text-amber-500/30 mb-4" />
+                <p className="text-sm text-slate-300 font-sans leading-relaxed italic mb-8">
+                  &quot;{rev.text}&quot;
+                </p>
               </CardContent>
-              <div className="flex items-center gap-3 pt-4 border-t border-slate-800/80">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-indigo-600 to-cyan-500 flex items-center justify-center font-bold text-white text-sm shadow-md">
+
+              <div className="flex items-center gap-3 pt-4 border-t border-white/10">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-amber-600 to-amber-500 flex items-center justify-center font-bold text-white text-xs shadow-md font-mono">
                   {rev.avatar}
                 </div>
                 <div>
-                  <h4 className="text-sm font-bold text-slate-100">{rev.name}</h4>
+                  <h4 className="text-sm font-bold text-[#f4f3ef] font-display">{rev.name}</h4>
                   <p className="text-xs text-slate-400">
-                    {rev.role} · <span className="text-indigo-400">{rev.company}</span>
+                    {rev.role} · <span className="text-amber-400 font-semibold">{rev.company}</span>
                   </p>
                 </div>
               </div>
             </Card>
           ))}
         </div>
+
       </div>
     </section>
   );
