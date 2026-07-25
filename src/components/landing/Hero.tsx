@@ -12,13 +12,10 @@ interface HeroProps {
 export const Hero: React.FC<HeroProps> = ({ onOpenLeadModal }) => {
   return (
     <>
-      {/* 1. Full-Screen Editorial Hero Fold */}
       <section className="relative overflow-hidden min-h-screen flex items-center justify-center pt-24 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-          {/* Asymmetrical Editorial Header Layout */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-end">
             <div className="lg:col-span-8 flex flex-col items-start text-left">
-              {/* Editorial Headline */}
               <h1 className="text-4xl sm:text-6xl lg:text-7xl xl:text-8xl font-extrabold text-[#f4f3ef] tracking-tight leading-[1.05] font-display">
                 Capture &amp; Qualify{' '}
                 <span className="font-serif-italic font-normal text-amber-glow font-serif">
@@ -59,11 +56,9 @@ export const Hero: React.FC<HeroProps> = ({ onOpenLeadModal }) => {
         </div>
       </section>
 
-      {/* 2. Interactive App Console Section (Below min-h-screen) */}
       <section className="py-16 sm:py-24 relative border-b border-white/10 bg-[#0a0b0d]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="relative rounded-2xl bg-[#121418] p-4 sm:p-6 border border-white/10 shadow-2xl overflow-hidden group">
-            {/* Console Header Bar */}
             <div className="flex items-center justify-between px-3 py-2 border-b border-white/10 bg-[#0a0b0d] rounded-t-xl mb-4">
               <div className="flex items-center gap-2">
                 <span className="w-2.5 h-2.5 rounded-full bg-rose-500/80" />
@@ -78,9 +73,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenLeadModal }) => {
               </div>
             </div>
 
-            {/* Console Card Grid */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              {/* Card 1 */}
               <div className="p-4 rounded-xl bg-[#191c22] border border-white/10 flex flex-col justify-between gap-3">
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-bold text-[#f4f3ef] font-display">Apex Global Enterprise</span>
@@ -96,7 +89,6 @@ export const Hero: React.FC<HeroProps> = ({ onOpenLeadModal }) => {
                 </div>
               </div>
 
-              {/* Card 2 */}
               <div className="p-4 rounded-xl bg-[#191c22] border border-white/10 flex flex-col justify-between gap-3">
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-bold text-[#f4f3ef] font-display">Vance Scale Studio</span>
@@ -112,7 +104,6 @@ export const Hero: React.FC<HeroProps> = ({ onOpenLeadModal }) => {
                 </div>
               </div>
 
-              {/* Card 3 */}
               <div className="p-4 rounded-xl bg-[#191c22] border border-white/10 flex flex-col justify-between gap-3">
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-bold text-[#f4f3ef] font-display">Zenith Cloud Labs</span>

@@ -8,7 +8,7 @@ import { Input } from '@/components/ui/Input';
 import { Button } from '@/components/ui/Button';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/Card';
 import { loginAction } from '@/actions/auth.actions';
-import { Lock, Mail, ArrowUpRight, Info } from 'lucide-react';
+import { Lock, Mail, ArrowUpRight } from 'lucide-react';
 
 function AdminLoginForm() {
   const router = useRouter();
@@ -18,12 +18,6 @@ function AdminLoginForm() {
   const [password, setPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
-
-  const fillDemoCredentials = () => {
-    setEmail('admin@leaddesk.com');
-    setPassword('AdminPassword123!');
-    setErrorMsg(null);
-  };
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -57,8 +51,6 @@ function AdminLoginForm() {
   return (
     <div className="min-h-screen bg-[#0a0b0d] text-[#f4f3ef] flex items-center justify-center p-4 relative overflow-hidden font-sans">
       <div className="w-full max-w-md relative z-10">
-        
-        {/* Header Brand */}
         <div className="flex flex-col items-center text-center mb-8">
           <Link href="/" className="flex items-center gap-2.5 mb-4 group">
             <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-[#d97706] to-[#f59e0b] flex items-center justify-center shadow-lg shadow-amber-950/40 group-hover:scale-105 transition-transform">
@@ -67,27 +59,6 @@ function AdminLoginForm() {
           </Link>
           <h1 className="text-2xl font-extrabold text-[#f4f3ef] font-display tracking-tight">Admin Control Center</h1>
           <p className="text-xs text-slate-400 mt-1">Sign in to manage lead pipeline &amp; status triage</p>
-        </div>
-
-        {/* Demo Credentials Assistant Box */}
-        <div className="mb-6 p-4 rounded-xl bg-[#121418] border border-amber-500/30 flex flex-col gap-2.5 animate-fade-in-up">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2 text-xs font-bold text-amber-400 font-mono">
-              <Info className="w-4 h-4 text-amber-400" />
-              <span>Demo Admin Credentials</span>
-            </div>
-            <button
-              type="button"
-              onClick={fillDemoCredentials}
-              className="text-[11px] font-mono font-bold text-amber-400 hover:text-amber-300 bg-amber-500/10 px-2.5 py-1 rounded-md border border-amber-500/20 transition-colors"
-            >
-              Auto-Fill Credentials
-            </button>
-          </div>
-          <div className="text-xs font-mono text-slate-300 flex flex-col gap-1 pl-6">
-            <span>Email: <strong className="text-white">admin@leaddesk.com</strong></span>
-            <span>Password: <strong className="text-white">AdminPassword123!</strong></span>
-          </div>
         </div>
 
         <Card className="tactile-card border border-white/10 shadow-2xl p-6 sm:p-8 bg-[#121418]">
@@ -144,7 +115,6 @@ function AdminLoginForm() {
             ← Return to Public Landing Page
           </Link>
         </div>
-
       </div>
     </div>
   );

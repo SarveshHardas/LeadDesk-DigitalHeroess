@@ -15,19 +15,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenLeadModal }) => {
   return (
     <header className="fixed top-4 sm:top-6 left-1/2 -translate-x-1/2 z-50 max-w-6xl w-[calc(100%-2rem)]">
       <div className="tactile-panel rounded-full px-4 sm:px-6 py-2.5 flex items-center justify-between border border-white/10 shadow-2xl bg-[#121418]/85 backdrop-blur-2xl">
-        {/* Brand Logo */}
         <Link href="/" className="flex items-center gap-2.5 group focus:outline-none rounded-full px-1">
           <div className="flex items-center gap-1.5">
-            <span className="text-sm font-bold text-[#f4f3ef] tracking-tight font-display">
+            <span className="text-lg font-bold text-[#f4f3ef] tracking-tight font-display">
               LeadDesk
-            </span>
-            <span className="text-[10px] px-1.5 py-0.2 rounded bg-amber-500/10 text-amber-400 font-mono border border-amber-500/20 font-semibold uppercase">
-              Mini
             </span>
           </div>
         </Link>
 
-        {/* Desktop Nav Items */}
         <nav className="hidden md:flex items-center gap-7 text-xs font-semibold tracking-wide text-slate-300">
           <a href="#features" className="hover:text-white transition-colors duration-150">
             Features
@@ -43,7 +38,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenLeadModal }) => {
           </a>
         </nav>
 
-        {/* Right CTA Actions */}
         <div className="hidden md:flex items-center gap-3">
           <Link href="/admin/login">
             <Button variant="ghost" size="sm" leftIcon={<ShieldCheck className="w-3.5 h-3.5" />}>
@@ -61,7 +55,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenLeadModal }) => {
           </Button>
         </div>
 
-        {/* Mobile menu button */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           className="md:hidden p-2 rounded-full text-slate-300 hover:text-white hover:bg-white/10 focus:outline-none"
@@ -71,7 +64,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenLeadModal }) => {
         </button>
       </div>
 
-      {/* Mobile Drawer */}
       {mobileMenuOpen && (
         <div className="md:hidden mt-2 tactile-panel rounded-2xl p-5 border border-white/10 flex flex-col gap-4 animate-scale-up bg-[#121418]/95 shadow-2xl">
           <nav className="flex flex-col gap-2 text-sm font-medium text-slate-300">
