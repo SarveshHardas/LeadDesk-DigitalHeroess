@@ -10,6 +10,13 @@
 
 ---
 
+## 🎥 Submission Assets & Video Links
+
+- **Google Drive Submission Folder (Video Walkthrough & Candidate Resume)**: [View Submission Folder](https://drive.google.com/drive/folders/1WTmkpxyztBIIIjX0gOQDS1Cypx3XGhoP?usp=sharing)
+- **Direct Asset / Video Link**: [View Direct Asset File](https://drive.google.com/file/d/1CMUvmc09P2drLbijSU4fZrpI2bg8vKOP/view?usp=sharing)
+
+---
+
 ## 🌟 Key Features
 
 - **Handcrafted Editorial Design System**: Hand-tailored UI built with `Space_Grotesk` display headlines, `Instrument_Serif` editorial accents, `Plus_Jakarta_Sans` UI body type, and `Geist_Mono` metrics.
@@ -94,9 +101,7 @@ digital-heroes/
 │   ├── ARCHITECTURE.md          # In-depth system architecture & request flows
 │   ├── API_REFERENCE.md         # Full REST API & Server Actions reference
 │   ├── DATABASE.md              # MongoDB collections, Mongoose schemas & indexes
-│   ├── DEPLOYMENT.md            # Step-by-step Atlas & Vercel deployment guide
-│   ├── PROJECT_WALKTHROUGH.md   # Comprehensive engineering project walkthrough
-│   └── LOOM_SCRIPT.md           # 5-8 minute presentation script for reviewers
+│   └── DEPLOYMENT.md            # Step-by-step Atlas & Vercel deployment guide
 ├── public/                      # Static assets & icons
 ├── src/
 │   ├── actions/                 # Next.js Server Actions (Lead & Auth mutations)
