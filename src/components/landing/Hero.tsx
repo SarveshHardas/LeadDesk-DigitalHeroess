@@ -3,7 +3,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/Button';
 import { Badge } from '@/components/ui/Badge';
-import { ArrowUpRight, TrendingUp, Users, Zap, ShieldCheck, Layers } from 'lucide-react';
+import { ArrowUpRight, Layers } from 'lucide-react';
 
 interface HeroProps {
   onOpenLeadModal: () => void;
@@ -11,20 +11,13 @@ interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({ onOpenLeadModal }) => {
   return (
-    <section className="relative overflow-hidden pt-28 pb-20 lg:pt-36 lg:pb-32 border-b border-white/10">
+    <section className="relative overflow-hidden min-h-screen pt-36 pb-28 lg:pt-48 lg:pb-40 border-b border-white/10 flex flex-col justify-center">
       {/* Background Subtle Grid & Texture */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 min-h-screen flex flex-col justify-center py-12">
         
         {/* Asymmetrical Editorial Header Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end mb-16">
-          
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end mb-20">
           <div className="lg:col-span-8 flex flex-col items-start text-left">
-            {/* Top Monospace Pill */}
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#191c22] border border-white/10 text-xs font-mono text-amber-400 mb-6">
-              <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
-              <span>LEADDESK ARCHITECTURE // V2.4</span>
-            </div>
-
             {/* Editorial Headline */}
             <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-[#f4f3ef] tracking-tight leading-[1.08] font-display">
               Capture &amp; Qualify{' '}
@@ -63,38 +56,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenLeadModal }) => {
             </div>
           </div>
         </div>
-
-        {/* Tactical Metrics Bar */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 p-4 rounded-2xl bg-[#121418] border border-white/10 mb-12">
-          <div className="p-3 flex flex-col">
-            <span className="text-[10px] font-mono uppercase tracking-wider text-slate-400">Intake Latency</span>
-            <span className="text-xl font-extrabold font-mono text-[#f4f3ef] mt-1 flex items-center gap-1">
-              &lt; 14ms <Zap className="w-3.5 h-3.5 text-amber-400" />
-            </span>
-          </div>
-
-          <div className="p-3 flex flex-col border-l border-white/10 pl-4">
-            <span className="text-[10px] font-mono uppercase tracking-wider text-slate-400">Spam Shield</span>
-            <span className="text-xl font-extrabold font-mono text-emerald-400 mt-1 flex items-center gap-1">
-              99.9% <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-            </span>
-          </div>
-
-          <div className="p-3 flex flex-col border-l border-white/10 pl-4">
-            <span className="text-[10px] font-mono uppercase tracking-wider text-slate-400">Conversion Rate</span>
-            <span className="text-xl font-extrabold font-mono text-[#f4f3ef] mt-1 flex items-center gap-1">
-              +42% <TrendingUp className="w-3.5 h-3.5 text-amber-400" />
-            </span>
-          </div>
-
-          <div className="p-3 flex flex-col border-l border-white/10 pl-4">
-            <span className="text-[10px] font-mono uppercase tracking-wider text-slate-400">Active Pipeline</span>
-            <span className="text-xl font-extrabold font-mono text-amber-400 mt-1 flex items-center gap-1">
-              500+ <Users className="w-3.5 h-3.5 text-amber-400" />
-            </span>
-          </div>
-        </div>
-
+        
         {/* Hero Interactive App Console Frame */}
         <div className="relative rounded-2xl bg-[#121418] p-3 sm:p-5 border border-white/10 shadow-2xl overflow-hidden group">
           {/* Console Header Bar */}
