@@ -3,7 +3,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/Button';
 import { Badge } from '@/components/ui/Badge';
-import { ArrowUpRight, Sparkles, TrendingUp, Users, Zap, ShieldCheck, Layers } from 'lucide-react';
+import { ArrowUpRight, TrendingUp, Users, Zap, ShieldCheck, Layers } from 'lucide-react';
 
 interface HeroProps {
   onOpenLeadModal: () => void;
