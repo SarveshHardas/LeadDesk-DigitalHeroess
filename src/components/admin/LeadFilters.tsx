@@ -27,9 +27,9 @@ export const LeadFilters: React.FC<LeadFiltersProps> = ({
   const statuses: Array<LeadStatus | 'All'> = ['All', 'New', 'Contacted', 'Closed'];
 
   return (
-    <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4 mb-6">
+    <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4 mb-6 font-sans">
       {/* Status Tabs */}
-      <div className="flex items-center gap-1.5 p-1 rounded-xl bg-slate-900/90 border border-slate-800 overflow-x-auto">
+      <div className="flex items-center gap-1.5 p-1 rounded-xl bg-[#121418] border border-white/10 overflow-x-auto">
         {statuses.map((st) => {
           const isActive = statusFilter === st;
           return (
@@ -37,10 +37,10 @@ export const LeadFilters: React.FC<LeadFiltersProps> = ({
               key={st}
               onClick={() => onStatusFilterChange(st)}
               className={cn(
-                'px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all duration-150 whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-indigo-500',
+                'px-3.5 py-1.5 rounded-lg text-xs font-mono font-bold transition-all duration-150 whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-amber-500',
                 isActive
-                  ? 'bg-indigo-600 text-white shadow-md shadow-indigo-600/30'
-                  : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800/50'
+                  ? 'bg-[#d97706] text-white shadow-md shadow-amber-950/40'
+                  : 'text-slate-400 hover:text-slate-200 hover:bg-white/5'
               )}
             >
               {st}
@@ -53,7 +53,7 @@ export const LeadFilters: React.FC<LeadFiltersProps> = ({
       <div className="flex items-center gap-3">
         <div className="relative flex-1 sm:w-72">
           <Input
-            placeholder="Search leads by name, email, message..."
+            placeholder="Search leads by name, email, notes..."
             value={search}
             onChange={(e) => onSearchChange(e.target.value)}
             leftIcon={<Search className="w-4 h-4 text-slate-400" />}
@@ -76,8 +76,8 @@ export const LeadFilters: React.FC<LeadFiltersProps> = ({
           size="md"
           onClick={onSeedData}
           isLoading={isSeeding}
-          leftIcon={<Database className="w-4 h-4 text-indigo-400" />}
-          className="shrink-0 text-xs font-medium"
+          leftIcon={<Database className="w-4 h-4 text-amber-400" />}
+          className="shrink-0 text-xs font-mono font-bold rounded-lg"
         >
           <span className="hidden sm:inline">Seed Sample Leads</span>
           <span className="sm:hidden">Seed</span>
