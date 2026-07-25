@@ -11,36 +11,32 @@ interface MetricsCardsProps {
 export const MetricsCards: React.FC<MetricsCardsProps> = ({ metrics, isLoading }) => {
   const cards = [
     {
-      title: 'Total Pipeline Leads',
+      title: 'Total Inbound Leads',
       value: metrics?.totalLeads ?? 0,
-      subtext: 'Active intake records',
-      icon: <Users className="w-5 h-5 text-indigo-400" />,
-      border: 'border-indigo-500/20',
-      gradient: 'from-indigo-500/10 to-transparent',
+      subtext: 'Active pipeline records',
+      icon: <Users className="w-4 h-4 text-amber-400" />,
+      border: 'border-white/10',
     },
     {
       title: 'New / Uncontacted',
       value: metrics?.newLeads ?? 0,
       subtext: 'Requires sales action',
-      icon: <Sparkles className="w-5 h-5 text-cyan-400" />,
-      border: 'border-cyan-500/20',
-      gradient: 'from-cyan-500/10 to-transparent',
+      icon: <Sparkles className="w-4 h-4 text-amber-400" />,
+      border: 'border-amber-500/20',
     },
     {
       title: 'In Contact Pipeline',
       value: metrics?.contactedLeads ?? 0,
       subtext: 'Demos & proposals sent',
-      icon: <PhoneCall className="w-5 h-5 text-amber-400" />,
-      border: 'border-amber-500/20',
-      gradient: 'from-amber-500/10 to-transparent',
+      icon: <PhoneCall className="w-4 h-4 text-slate-300" />,
+      border: 'border-slate-700/60',
     },
     {
-      title: 'Closed Deals & Won',
+      title: 'Closed & Won Deals',
       value: metrics?.closedLeads ?? 0,
       subtext: `${metrics?.conversionRate ?? 0}% Conversion rate`,
-      icon: <CheckCircle2 className="w-5 h-5 text-emerald-400" />,
+      icon: <CheckCircle2 className="w-4 h-4 text-emerald-400" />,
       border: 'border-emerald-500/20',
-      gradient: 'from-emerald-500/10 to-transparent',
     },
   ];
 
@@ -49,20 +45,20 @@ export const MetricsCards: React.FC<MetricsCardsProps> = ({ metrics, isLoading }
       {cards.map((card, idx) => (
         <Card
           key={idx}
-          className={`glass-card p-5 border ${card.border} bg-gradient-to-br ${card.gradient} relative overflow-hidden`}
+          className={`tactile-card p-5 border ${card.border} bg-[#121418] relative overflow-hidden`}
         >
           <div className="flex items-center justify-between mb-3">
-            <span className="text-xs font-semibold text-slate-400 uppercase tracking-wider">{card.title}</span>
-            <div className="w-9 h-9 rounded-lg bg-slate-900/80 border border-slate-800 flex items-center justify-center">
+            <span className="text-[11px] font-mono font-bold text-slate-400 uppercase tracking-wider">{card.title}</span>
+            <div className="w-8 h-8 rounded-lg bg-[#191c22] border border-white/10 flex items-center justify-center">
               {card.icon}
             </div>
           </div>
           <div className="flex items-baseline gap-2">
-            <span className="text-3xl font-extrabold text-white tracking-tight">
+            <span className="text-3xl font-extrabold text-[#f4f3ef] font-mono tracking-tight">
               {isLoading ? '...' : card.value}
             </span>
           </div>
-          <p className="text-xs text-slate-400 mt-2 font-medium">{card.subtext}</p>
+          <p className="text-xs text-slate-400 mt-2 font-sans">{card.subtext}</p>
         </Card>
       ))}
     </div>
