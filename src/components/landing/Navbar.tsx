@@ -17,9 +17,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenLeadModal }) => {
       <div className="tactile-panel rounded-full px-4 sm:px-6 py-2.5 flex items-center justify-between border border-white/10 shadow-2xl bg-[#121418]/85 backdrop-blur-2xl">
         {/* Brand Logo */}
         <Link href="/" className="flex items-center gap-2.5 group focus:outline-none rounded-full px-1">
-          <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-[#d97706] to-[#f59e0b] flex items-center justify-center shadow-md shadow-amber-950/40 group-hover:scale-105 transition-transform duration-200">
-            <span className="font-mono font-black text-xs text-white">LD</span>
-          </div>
           <div className="flex items-center gap-1.5">
             <span className="text-sm font-bold text-[#f4f3ef] tracking-tight font-display">
               LeadDesk
