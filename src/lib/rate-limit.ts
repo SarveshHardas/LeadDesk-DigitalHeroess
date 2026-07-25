@@ -13,7 +13,7 @@ export function checkRateLimit(
   const now = Date.now();
   const lastSubmission = submissionTracker.get(identifier);
 
-  if (lastSubmission && now - lastSubmission < 10000) {
+  if (lastSubmission && now - lastSubmission < windowMs / limit) {
     // Prevent submissions faster than 10 seconds apart from the same email/IP
     return {
       allowed: false,

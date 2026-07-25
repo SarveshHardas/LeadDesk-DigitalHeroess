@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription } from '@/components/ui/Card';
-import { Zap, ShieldCheck, BarChart3, Filter, Clock, Sparkles } from 'lucide-react';
+import { Zap, ShieldCheck, BarChart3, Filter, Sparkles } from 'lucide-react';
 
 export const Benefits: React.FC = () => {
   const benefitsList = [

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card } from '@/components/ui/Card';
 import { LeadMetrics } from '@/types/lead';
-import { Users, Sparkles, PhoneCall, CheckCircle2, TrendingUp, DollarSign } from 'lucide-react';
+import { Users, Sparkles, PhoneCall, CheckCircle2 } from 'lucide-react';
 
 interface MetricsCardsProps {
   metrics: LeadMetrics | null;

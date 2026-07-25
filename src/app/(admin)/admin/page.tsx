@@ -80,7 +80,7 @@ function AdminDashboardContent() {
       } else {
         toastError('Error', res.error || 'Failed to fetch leads');
       }
-    } catch (err) {
+    } catch {
       toastError('Network Error', 'Failed to connect to backend database');
     } finally {
       setIsLoading(false);
@@ -88,8 +88,18 @@ function AdminDashboardContent() {
   }, [debouncedSearch, statusFilter, page, toastError]);
 
   useEffect(() => {
-    fetchLeads();
-    fetchMetrics();
+    let isMounted = true;
+    const loadDashboardData = async () => {
+      if (!isMounted) return;
+      await fetchLeads();
+      await fetchMetrics();
+    };
+
+    loadDashboardData();
+
+    return () => {
+      isMounted = false;
+    };
   }, [fetchLeads, fetchMetrics]);
 
   // Handle Optimistic Status Toggle
@@ -141,7 +151,7 @@ function AdminDashboardContent() {
       } else {
         toastError('Seeding Failed', res.error || 'Could not insert sample data');
       }
-    } catch (err) {
+    } catch {
       toastError('Error', 'Failed to execute seeding action');
     } finally {
       setIsSeeding(false);
@@ -182,7 +192,6 @@ function AdminDashboardContent() {
           }}
           onSeedData={handleSeedData}
           isSeeding={isSeeding}
-          totalResults={totalItems}
         />
 
         {/* Lead Table */}

@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { Sparkles, ExternalLink, Heart } from 'lucide-react';
+import { Sparkles, ExternalLink } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   return (

@@ -2,12 +2,11 @@
 
 import React from 'react';
 import { Modal } from '@/components/ui/Modal';
-import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
 import { Select } from '@/components/ui/Select';
 import { ILead, LeadStatus } from '@/types/lead';
 import { formatDate } from '@/lib/utils';
-import { Mail, Calendar, DollarSign, MessageSquare, Trash2, CheckCircle2 } from 'lucide-react';
+import { Mail, Calendar, DollarSign, MessageSquare, Trash2 } from 'lucide-react';
 
 interface LeadDetailModalProps {
   lead: ILead | null;

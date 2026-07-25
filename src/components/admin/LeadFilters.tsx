@@ -4,7 +4,7 @@ import React from 'react';
 import { Input } from '@/components/ui/Input';
 import { Button } from '@/components/ui/Button';
 import { LeadStatus } from '@/types/lead';
-import { Search, X, RefreshCw, Filter, Database } from 'lucide-react';
+import { Search, X, Database } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 interface LeadFiltersProps {
@@ -14,7 +14,6 @@ interface LeadFiltersProps {
   onStatusFilterChange: (status: LeadStatus | 'All') => void;
   onSeedData: () => void;
   isSeeding?: boolean;
-  totalResults: number;
 }
 
 export const LeadFilters: React.FC<LeadFiltersProps> = ({
@@ -24,7 +23,6 @@ export const LeadFilters: React.FC<LeadFiltersProps> = ({
   onStatusFilterChange,
   onSeedData,
   isSeeding,
-  totalResults,
 }) => {
   const statuses: Array<LeadStatus | 'All'> = ['All', 'New', 'Contacted', 'Closed'];
 

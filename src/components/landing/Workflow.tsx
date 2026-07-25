@@ -1,5 +1,5 @@
 import React from 'react';
-import { Send, ShieldAlert, CheckCircle2, ArrowRight } from 'lucide-react';
+import { Send, ShieldAlert, CheckCircle2 } from 'lucide-react';
 
 export const Workflow: React.FC = () => {
   const steps = [

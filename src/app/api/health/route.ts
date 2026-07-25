@@ -11,7 +11,7 @@ export async function GET() {
       database: 'MongoDB Atlas',
       timestamp: new Date().toISOString(),
     });
-  } catch (error) {
+  } catch {
     return NextResponse.json(
       { status: 'unhealthy', error: 'Database connection failed' },
       { status: 500 }

@@ -9,7 +9,7 @@ import { useToast } from '@/components/ui/Toast';
 import { submitLeadAction } from '@/actions/lead.actions';
 import { LeadSubmissionSchema, budgetOptions } from '@/schemas/lead.schema';
 import { BudgetRange } from '@/types/lead';
-import { CheckCircle2, Send, Sparkles, AlertCircle } from 'lucide-react';
+import { CheckCircle2, Send, AlertCircle } from 'lucide-react';
 
 interface LeadFormModalProps {
   isOpen: boolean;
@@ -83,7 +83,7 @@ export const LeadFormModal: React.FC<LeadFormModalProps> = ({ isOpen, onClose })
         setServerError(result.error || 'Failed to submit inquiry');
         toastError('Submission Error', result.error || 'Please review your entries.');
       }
-    } catch (err) {
+    } catch {
       setServerError('An unexpected network error occurred. Please try again.');
       toastError('Network Error', 'Connection failed.');
     } finally {

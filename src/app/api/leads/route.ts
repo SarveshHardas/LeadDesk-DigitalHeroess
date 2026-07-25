@@ -17,7 +17,7 @@ export async function POST(request: NextRequest) {
     const body = await request.json();
     const res = await submitLeadAction(body);
     return NextResponse.json(res, { status: res.success ? 201 : 400 });
-  } catch (error) {
+  } catch {
     return NextResponse.json(
       { success: false, error: 'Invalid JSON request payload' },
       { status: 400 }

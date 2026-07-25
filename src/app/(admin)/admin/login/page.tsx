@@ -8,7 +8,7 @@ import { Input } from '@/components/ui/Input';
 import { Button } from '@/components/ui/Button';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/Card';
 import { loginAction } from '@/actions/auth.actions';
-import { Sparkles, Lock, Mail, ArrowRight, ShieldCheck, Info } from 'lucide-react';
+import { Sparkles, Lock, Mail, ArrowRight, Info } from 'lucide-react';
 
 function AdminLoginForm() {
   const router = useRouter();
@@ -47,7 +47,7 @@ function AdminLoginForm() {
         setErrorMsg(res.error || 'Authentication failed');
         toastError('Login Failed', res.error || 'Check credentials and try again.');
       }
-    } catch (err) {
+    } catch {
       setErrorMsg('An unexpected connection error occurred.');
     } finally {
       setIsLoading(false);

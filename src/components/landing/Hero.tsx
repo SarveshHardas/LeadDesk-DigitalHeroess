@@ -3,7 +3,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/Button';
 import { Badge } from '@/components/ui/Badge';
-import { ArrowRight, Sparkles, CheckCircle2, TrendingUp, Users, ShieldAlert, Zap } from 'lucide-react';
+import { ArrowRight, Sparkles, TrendingUp, Users, Zap } from 'lucide-react';
 
 interface HeroProps {
   onOpenLeadModal: () => void;
@@ -108,7 +108,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenLeadModal }) => {
                 <Badge variant="status" status="New">New</Badge>
               </div>
               <span className="text-xs text-slate-400">budget: $25k+</span>
-              <p className="text-xs text-slate-300 line-clamp-2">"Looking for an omnichannel CRM migration for our sales pipeline..."</p>
+              <p className="text-xs text-slate-300 line-clamp-2">&quot;Looking for an omnichannel CRM migration for our sales pipeline...&quot;</p>
               <div className="text-[10px] text-slate-500 pt-2 border-t border-slate-800/60 flex items-center justify-between">
                 <span>Verified lead</span>
                 <span>2 mins ago</span>
@@ -122,7 +122,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenLeadModal }) => {
                 <Badge variant="status" status="Contacted">Contacted</Badge>
               </div>
               <span className="text-xs text-slate-400">budget: $10k-$25k</span>
-              <p className="text-xs text-slate-300 line-clamp-2">"Interested in custom API hooks & automated client onboarding..."</p>
+              <p className="text-xs text-slate-300 line-clamp-2">&quot;Interested in custom API hooks &amp; automated client onboarding...&quot;</p>
               <div className="text-[10px] text-slate-500 pt-2 border-t border-slate-800/60 flex items-center justify-between">
                 <span>Demo Scheduled</span>
                 <span>1 hour ago</span>
@@ -136,7 +136,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenLeadModal }) => {
                 <Badge variant="status" status="Closed">Closed</Badge>
               </div>
               <span className="text-xs text-slate-400">budget: $5k-$10k</span>
-              <p className="text-xs text-slate-300 line-clamp-2">"Contract signed! Ready for deployment next Monday."</p>
+              <p className="text-xs text-slate-300 line-clamp-2">&quot;Contract signed! Ready for deployment next Monday.&quot;</p>
               <div className="text-[10px] text-slate-500 pt-2 border-t border-slate-800/60 flex items-center justify-between">
                 <span>Won $12,500</span>
                 <span>Yesterday</span>

@@ -49,7 +49,7 @@ export const Testimonials: React.FC = () => {
             <Card key={index} className="glass-card p-6 flex flex-col justify-between border border-slate-800">
               <CardContent className="p-0">
                 <Quote className="w-8 h-8 text-indigo-500/40 mb-4" />
-                <p className="text-sm text-slate-300 leading-relaxed italic mb-6">"{rev.text}"</p>
+                <p className="text-sm text-slate-300 leading-relaxed italic mb-6">&quot;{rev.text}&quot;</p>
               </CardContent>
               <div className="flex items-center gap-3 pt-4 border-t border-slate-800/80">
                 <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-indigo-600 to-cyan-500 flex items-center justify-center font-bold text-white text-sm shadow-md">

@@ -10,7 +10,7 @@ import {
   LeadStatusUpdateInput,
 } from '@/schemas/lead.schema';
 import { ApiResponse, PaginatedResponse } from '@/types/api';
-import { ILead, LeadStatus, LeadMetrics } from '@/types/lead';
+import { ILead, LeadMetrics } from '@/types/lead';
 import { checkRateLimit } from '@/lib/rate-limit';
 
 /**

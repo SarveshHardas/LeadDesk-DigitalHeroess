@@ -77,7 +77,7 @@ export const LeadFormSection: React.FC = () => {
         setServerError(result.error || 'Failed to submit inquiry');
         toastError('Submission Error', result.error || 'Please check form entries.');
       }
-    } catch (err) {
+    } catch {
       setServerError('An unexpected network error occurred. Please try again.');
       toastError('Network Error', 'Connection failed.');
     } finally {

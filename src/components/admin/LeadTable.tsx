@@ -13,8 +13,6 @@ import {
   ChevronRight,
   Inbox,
   Sparkles,
-  ArrowUpDown,
-  MoreVertical,
 } from 'lucide-react';
 
 interface LeadTableProps {
