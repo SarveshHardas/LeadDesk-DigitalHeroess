@@ -24,7 +24,7 @@ export const LeadFormModal: React.FC<LeadFormModalProps> = ({ isOpen, onClose })
     email: '',
     budget: '$5k-$10k' as BudgetRange,
     message: '',
-    website: '', // Honeypot field
+    website: '',
   });
 
   const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
@@ -34,7 +34,7 @@ export const LeadFormModal: React.FC<LeadFormModalProps> = ({ isOpen, onClose })
 
   const budgetSelectOptions = budgetOptions.map((opt) => ({
     value: opt,
-    label: `Project Budget: ${opt}`,
+    label: `Project Budget Tier: ${opt}`,
   }));
 
   const handleInputChange = (
@@ -52,7 +52,6 @@ export const LeadFormModal: React.FC<LeadFormModalProps> = ({ isOpen, onClose })
     setServerError(null);
     setFieldErrors({});
 
-    // Client-side Zod validation
     const clientValidation = LeadSubmissionSchema.safeParse(formData);
     if (!clientValidation.success) {
       const errors: Record<string, string> = {};
@@ -117,38 +116,38 @@ export const LeadFormModal: React.FC<LeadFormModalProps> = ({ isOpen, onClose })
       description={
         isSuccess
           ? undefined
-          : 'Tell us about your project requirements and lead volume goals.'
+          : 'Provide your project requirements for direct pipeline triage.'
       }
       maxWidth="lg"
     >
       {isSuccess ? (
-        <div className="flex flex-col items-center text-center py-6 animate-scale-in">
-          <div className="w-16 h-16 rounded-full bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center mb-4 text-emerald-400">
-            <CheckCircle2 className="w-10 h-10 animate-pulse" />
+        <div className="flex flex-col items-center text-center py-6 animate-scale-up font-sans">
+          <div className="w-16 h-16 rounded-full bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center mb-4 text-emerald-400">
+            <CheckCircle2 className="w-9 h-9 animate-pulse" />
           </div>
-          <h3 className="text-2xl font-bold text-slate-100">Inquiry Received!</h3>
-          <p className="text-slate-300 text-sm mt-2 max-w-md leading-relaxed">
-            Thank you for reaching out. A senior lead strategist from our team will review your application and respond within 2 business hours.
+          <h3 className="text-2xl font-bold text-[#f4f3ef] font-display">Inquiry Registered</h3>
+          <p className="text-slate-300 text-xs sm:text-sm mt-2 max-w-md leading-relaxed">
+            Your lead inquiry has been validated and queued into our MongoDB pipeline. Our senior lead strategist will follow up within 2 hours.
           </p>
 
-          <div className="w-full p-4 rounded-xl glass-card border border-slate-800 mt-6 text-left flex flex-col gap-2 text-xs text-slate-300">
-            <div className="flex justify-between border-b border-slate-800/80 pb-2">
+          <div className="w-full p-4 rounded-xl bg-[#121418] border border-white/10 mt-6 text-left flex flex-col gap-2 text-xs font-mono text-slate-300">
+            <div className="flex justify-between border-b border-white/10 pb-2">
               <span className="text-slate-500">Applicant:</span>
-              <span className="font-semibold text-white">{formData.name} ({formData.email})</span>
+              <span className="font-bold text-white">{formData.name} ({formData.email})</span>
             </div>
-            <div className="flex justify-between border-b border-slate-800/80 pb-2">
+            <div className="flex justify-between border-b border-white/10 pb-2">
               <span className="text-slate-500">Budget Tier:</span>
-              <span className="font-mono text-indigo-400 font-bold">{formData.budget}</span>
+              <span className="text-amber-400 font-bold">{formData.budget}</span>
             </div>
             <div className="flex justify-between">
               <span className="text-slate-500">Status:</span>
-              <span className="text-emerald-400 font-semibold">Queued in LeadDesk Engine</span>
+              <span className="text-emerald-400 font-bold">Queued in LeadDesk Engine</span>
             </div>
           </div>
 
           <div className="flex gap-3 mt-6 w-full">
             <Button variant="secondary" fullWidth onClick={resetForm}>
-              Submit Another Inquiry
+              Submit Another
             </Button>
             <Button variant="primary" fullWidth onClick={handleModalClose}>
               Done
@@ -156,9 +155,9 @@ export const LeadFormModal: React.FC<LeadFormModalProps> = ({ isOpen, onClose })
           </div>
         </div>
       ) : (
-        <form onSubmit={handleSubmit} className="flex flex-col gap-4 mt-2" noValidate>
+        <form onSubmit={handleSubmit} className="flex flex-col gap-4 mt-2 font-sans" noValidate>
           {serverError && (
-            <div className="p-3 rounded-lg bg-rose-500/10 border border-rose-500/30 text-rose-300 text-xs flex items-start gap-2 animate-fade-in">
+            <div className="p-3 rounded-lg bg-rose-500/10 border border-rose-500/30 text-rose-300 text-xs flex items-start gap-2 animate-fade-in-up">
               <AlertCircle className="w-4 h-4 text-rose-400 shrink-0 mt-0.5" />
               <span>{serverError}</span>
             </div>
@@ -208,9 +207,9 @@ export const LeadFormModal: React.FC<LeadFormModalProps> = ({ isOpen, onClose })
           />
 
           <Textarea
-            label="Project Context / Goals"
+            label="Project Context & Requirements"
             name="message"
-            placeholder="Share details about your current lead pipeline, targets, or custom CRM integration needs..."
+            placeholder="Describe your current CRM workflow, monthly intake volume, or custom requirements..."
             value={formData.message}
             onChange={handleInputChange}
             error={fieldErrors.message}

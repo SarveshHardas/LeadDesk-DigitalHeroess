@@ -29,7 +29,7 @@ export const LeadFormSection: React.FC = () => {
 
   const budgetSelectOptions = budgetOptions.map((opt) => ({
     value: opt,
-    label: `Project Budget: ${opt}`,
+    label: `Project Budget Tier: ${opt}`,
   }));
 
   const handleInputChange = (
@@ -99,38 +99,38 @@ export const LeadFormSection: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-20 relative border-t border-slate-800/80 bg-slate-950/40">
+    <section id="contact" className="py-24 relative border-b border-white/10 bg-[#0a0b0d]">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <Card className="glass-panel border border-slate-800 shadow-2xl p-6 sm:p-10">
+        <Card className="tactile-card border border-white/10 shadow-2xl p-6 sm:p-10 bg-[#121418]">
           <CardHeader className="text-center mb-8">
-            <div className="inline-flex items-center justify-center gap-2 px-3.5 py-1 rounded-full bg-indigo-500/10 text-indigo-400 text-xs font-semibold uppercase tracking-wider mb-3 border border-indigo-500/20">
+            <div className="inline-flex items-center justify-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 text-amber-400 text-xs font-mono font-semibold uppercase tracking-wider mb-3 border border-amber-500/20">
               <Sparkles className="w-3.5 h-3.5" />
               Direct Lead Intake
             </div>
-            <CardTitle className="text-3xl sm:text-4xl">Ready To Automate Your Lead Pipeline?</CardTitle>
-            <CardDescription className="text-base text-slate-300 mt-2">
+            <CardTitle className="text-3xl sm:text-4xl font-display">Ready To Scale Your Lead Pipeline?</CardTitle>
+            <CardDescription className="text-sm text-slate-300 mt-2 font-sans">
               Fill out the intake form below to start qualifying leads and routing high-value accounts directly to your team.
             </CardDescription>
           </CardHeader>
 
           <CardContent>
             {isSuccess ? (
-              <div className="flex flex-col items-center text-center py-8 animate-scale-in">
-                <div className="w-16 h-16 rounded-full bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center mb-4 text-emerald-400">
-                  <CheckCircle2 className="w-10 h-10 animate-pulse" />
+              <div className="flex flex-col items-center text-center py-8 animate-scale-up">
+                <div className="w-16 h-16 rounded-full bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center mb-4 text-emerald-400">
+                  <CheckCircle2 className="w-9 h-9 animate-pulse" />
                 </div>
-                <h3 className="text-2xl font-bold text-slate-100">Application Submitted Successfully</h3>
-                <p className="text-slate-300 text-sm mt-2 max-w-md">
-                  We have received your message. Check your admin dashboard at <span className="font-mono text-indigo-400 font-bold">/admin</span> to view live synced lead records.
+                <h3 className="text-2xl font-bold text-[#f4f3ef] font-display">Inquiry Registered</h3>
+                <p className="text-slate-300 text-sm mt-2 max-w-md font-sans">
+                  We have received your submission. Check your admin dashboard at <span className="font-mono text-amber-400 font-bold">/admin</span> to view live synced records.
                 </p>
                 <Button variant="secondary" className="mt-6" onClick={resetForm}>
                   Submit Another Inquiry
                 </Button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="flex flex-col gap-5" noValidate>
+              <form onSubmit={handleSubmit} className="flex flex-col gap-5 font-sans" noValidate>
                 {serverError && (
-                  <div className="p-3.5 rounded-xl bg-rose-500/10 border border-rose-500/30 text-rose-300 text-xs flex items-start gap-2 animate-fade-in">
+                  <div className="p-3.5 rounded-xl bg-rose-500/10 border border-rose-500/30 text-rose-300 text-xs flex items-start gap-2 animate-fade-in-up">
                     <AlertCircle className="w-4 h-4 text-rose-400 shrink-0 mt-0.5" />
                     <span>{serverError}</span>
                   </div>
@@ -182,9 +182,9 @@ export const LeadFormSection: React.FC = () => {
                 />
 
                 <Textarea
-                  label="Project Requirements & Objectives"
+                  label="Project Requirements &amp; Objectives"
                   name="message"
-                  placeholder="Describe your current CRM workflow, monthly lead intake volume, and target ROI..."
+                  placeholder="Describe your current CRM workflow, monthly intake volume, and target ROI..."
                   value={formData.message}
                   onChange={handleInputChange}
                   error={fieldErrors.message}
@@ -192,9 +192,9 @@ export const LeadFormSection: React.FC = () => {
                 />
 
                 <div className="pt-2 flex flex-col sm:flex-row items-center justify-between gap-4">
-                  <div className="flex items-center gap-1.5 text-xs text-slate-400">
+                  <div className="flex items-center gap-1.5 text-xs text-slate-400 font-mono">
                     <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
-                    <span>Protected by Zod server validation & anti-spam honeypot</span>
+                    <span>Zod server validation &amp; honeypot active</span>
                   </div>
                   <Button
                     type="submit"
